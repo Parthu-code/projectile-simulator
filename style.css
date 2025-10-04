@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.controls-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    background: #333;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #cccccc;
+    transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.launch-btn, .reset-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.launch-btn {
+    background: linear-gradient(45deg, #ffffff, #e0e0e0);
+    color: #000;
+}
+
+.launch-btn:hover {
+    background: linear-gradient(45deg, #f0f0f0, #cccccc);
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ff1744);
+    color: #fff;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    transform: translateY(-2px);
+}
+
+.simulation-area {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#canvas {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background: #000;
+    max-width: 100%;
+    height: auto;
+}
+
+.results-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.result-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-card span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .controls-panel {
+        padding: 20px;
+    }
+    
+    #canvas {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .launch-btn, .reset-btn {
+        width: 100%;
+    }
+    
+    .results-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .control-group label {
+        font-size: 1rem;
+    }
+    
+    .launch-btn, .reset-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .result-card span {
+        font-size: 1.5rem;
+    }
+}

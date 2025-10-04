@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Play with Projectile</h1>
+            <p>Interactive Physics Simulator</p>
+        </header>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <label for="angle">Launch Angle: <span id="angle-value">45°</span></label>
+                <input type="range" id="angle" min="0" max="90" value="45" class="slider">
+            </div>
+
+            <div class="control-group">
+                <label for="velocity">Initial Velocity: <span id="velocity-value">50 m/s</span></label>
+                <input type="range" id="velocity" min="10" max="100" value="50" class="slider">
+            </div>
+
+            <div class="control-group">
+                <label for="gravity">Gravity: <span id="gravity-value">9.8 m/s²</span></label>
+                <input type="range" id="gravity" min="1" max="20" step="0.1" value="9.8" class="slider">
+            </div>
+
+            <div class="control-group">
+                <label for="height">Initial Height: <span id="height-value">0 m</span></label>
+                <input type="range" id="height" min="0" max="50" value="0" class="slider">
+            </div>
+
+            <div class="buttons">
+                <button id="launch" class="launch-btn">LAUNCH</button>
+            </div>
+        </div>
+
+        <div class="simulation-area">
+            <canvas id="canvas" width="800" height="400"></canvas>
+        </div>
+
+        <div class="results-panel">
+            <div class="result-card">
+                <h3>Range</h3>
+                <span id="range-value">0 m</span>
+            </div>
+            <div class="result-card">
+                <h3>Max Height</h3>
+                <span id="max-height-value">0 m</span>
+            </div>
+            <div class="result-card">
+                <h3>Time of Flight</h3>
+                <span id="time-value">0 s</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
